@@ -1,0 +1,70 @@
+SET search_path = test;
+
+CREATE TABLE Country (
+	CountryID VARCHAR(2),
+	CountryName VARCHAR(56),
+	primary key (CountryID)
+);
+
+CREATE TABLE Branch (
+	BranchID VARCHAR(4),
+	CountryID VARCHAR(4),
+	Created DATE,
+	primary key (BranchID),
+	foreign key (CountryID) references Country
+);
+
+CREATE TABLE PlatformUser (
+	UserID VARCHAR(4),
+	Pword VARCHAR(64),
+	FirstName VARCHAR(32),
+	LastName VARCHAR(64),
+	DOB DATE,
+	AddressNum VARCHAR(8),
+	AddressStreet VARCHAR(64),
+	AddressCity VARCHAR(16),
+	AddressPostal VARCHAR(6),
+	CountryID VARCHAR(2),
+	Email VARCHAR(345),
+	Phone VARCHAR(12),
+	About VARCHAR (200),
+	UserType VARCHAR (8),
+	Created DATE,
+	Status VARCHAR(8),
+	primary key (UserID),
+	foreign key (CountryID) references Country
+);
+
+CREATE TABLE Property (
+	PropertyID VARCHAR(4),
+	UserID VARCHAR(4),
+	BranchID VARCHAR(4),
+	AddressNum VARCHAR(8),
+	AddressStreet VARCHAR(64),
+	AddressCity VARCHAR(16),
+	AddressPostal VARCHAR(6),
+	CountryID VARCHAR(2),
+	Description VARCHAR(200),
+	Rooms INTEGER,
+	Bathrooms NUMERIC(2,1),
+	MinimumStay INTEGER,
+	RefundType VARCHAR(16),
+	Created DATE,
+	Status VARCHAR(8),
+	primary key (PropertyID),
+	foreign key (UserID) references PlatformUser,
+	foreign key (BranchID) references Branch,
+	foreign key (CountryID) references Country
+);
+
+CREATE TABLE RentalAgreement (
+	AgreementID VARCHAR(4),
+	PropertyID VARCHAR(4),
+	StartDate DATE,
+	EndDate DATE,
+	Signing VARCHAR(20),
+	Created DATE,
+	Status VARCHAR(8),
+	primary key (AgreementID),
+	foreign key (PropertyID) references Property 
+);

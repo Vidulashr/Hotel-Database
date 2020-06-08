@@ -1,0 +1,57 @@
+SET search_path = test;
+
+INSERT INTO Country VALUES (
+	'CA', 'Canada'
+);
+
+INSERT INTO Country VALUES (
+	'US', 'The United States of America'
+);
+
+INSERT INTO Country VALUES (
+	'FR', 'France'
+);
+
+INSERT INTO Branch VALUES (
+	'TOR','CA','2017-02-24'
+);
+
+INSERT INTO Branch VALUES (
+	'MTL','CA','2018-03-03'
+);
+
+INSERT INTO Branch VALUES (
+	'MRS','FR','2018-12-16'
+);
+
+INSERT INTO Branch VALUES (
+	'KCM','US','2019-12-06'
+);
+
+INSERT INTO PlatformUser VALUES(
+	'1', 'password123', 'Gerald', 'Smallface', '1976-07-17', '22', 'Street Road', 'Burlington', 'B1G0N3', 'CA', 'arealemailaddress@emaildomain.com', '12983987262', 'Just a guy doing some stuff', 'Renter', '2012-09-25', 'Active'  
+);
+
+INSERT INTO PlatformUser VALUES(
+	'2', 'paswrd111', 'Annie', 'Anomaly', '1988-05-13', '1033', 'Road Crescent', 'Hell', '16758', 'US', 'someone@somewhere.com', '128379936636', 'Enjoys when people sleep in buildings that arent owned by them', 'Owner', '2014-04-24', 'Active'  
+);
+
+INSERT INTO PlatformUser VALUES(
+	'3', 'm0b4lyf3', 'Tony', 'Smartguy', '1969-05-30', '1635', 'Tax Evasion Street', 'New York', '45645', 'US', 'dontworryaboutit@nonyabusiness.com', '138390238902', 'You ask too many questions', 'Owner', '2015-11-14', 'Active'  
+);
+
+INSERT INTO PlatformUser VALUES(
+	'4', 'apassword', 'Jacques', 'Fromage', '1990-03-04', '36', 'Rue du Baguette', 'Paris', '09877', 'FR', 'courriel@emaildomain.com', '33989892982', 'Adore les lits dans les maisons des autres', 'Renter', '2013-08-22', 'Active'  
+);
+
+INSERT INTO Property VALUES (
+	'11','2', 'KCM', '3456', 'Avenue Place', 'Boston', '13654', NULL, 'US', 'Suburban home for young professionals', '8', '2.5', '7', 'full', '2009-12-30', 'Active'
+);
+
+INSERT INTO Property VALUES (
+	'12','3', 'KCM', '888', 'Court Boulevard', 'Brooklyn', '19763', NULL, 'US', 'For special business only, no families', '4', '0.5', '1', 'none', '2020-04-01', 'Active'
+);
+
+INSERT INTO Property VALUES (
+	'13','3', 'KCM', '12', 'Street Street', 'Queens', '16656', NULL, 'US', 'The typa place you can bring the wife and kids', '9', '2.5', '2', 'full', '2016-11-11', 'Active'
+);
